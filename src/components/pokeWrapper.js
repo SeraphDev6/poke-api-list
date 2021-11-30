@@ -5,7 +5,7 @@ const PokeWrapper = () =>{
     const [pokemon,setPokemon]=useState([]);
 
     useEffect(()=>{
-        // console.log(pokemon);
+        console.log(pokemon);
     },[pokemon])
     const getPokemon = ()=>{
         fetch('https://pokeapi.co/api/v2/pokemon?limit=898')
@@ -23,7 +23,7 @@ const PokeWrapper = () =>{
         <button onClick={getPokemon}>Fetch Pokemon</button>
         <div className={styles.grid}>
             {pokemon.map((poke,i)=>{
-                return <PokeCard key={i} pokeName={poke.name} url={poke.url} />
+                return <PokeCard key={i} pokeNum={i+1} pokeName={poke.name} url={poke.url} />
             })}
         </div>
         </>
